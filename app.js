@@ -46,16 +46,25 @@ function renderMovie(movie) {
   results.innerHTML = `
     <div class="card">
       <img src="${movie.Poster}" alt="${movie.Title}">
-      <h4>${movie.Title} (${movie.Year})</h4>
+      <h4>${movie.Title} (${movie.Year})</h4><br>
+
+      <p><strong>Rated:</strong> ${movie.Rated}</p>
+      <p><strong>Released:</strong> ${movie.Released}</p>
+      <p><strong>Runtime:</strong> ${movie.Runtime}</p>
+      <p><strong>Genre:</strong> ${movie.Genre}</p>
+
       <p>${movie.Plot}</p>
+      <br>
       <div class="links">
         <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank">
-          IMDb: ${movie.imdbRating}
+          IMDb: ${movie.imdbRating} - ${movie.imdbVotes} votes
         </a>
         <br>
         <a href="https://www.rottentomatoes.com/search?search=${encodeURIComponent(movie.Title)}" target="_blank">
           Rotten Tomatoes: ${rtRating}
         </a>
+        <br>
+        <span>Box Office: ${movie.BoxOffice}</span>
         <br>
         <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(movie.Title + ' trailer')}" target="_blank">
           Watch Trailer
@@ -64,3 +73,4 @@ function renderMovie(movie) {
     </div>
   `;
 }
+

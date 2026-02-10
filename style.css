@@ -3,16 +3,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Playwrite NZ Basic', sans-serif;
+    font-family: "Vend Sans", sans-serif;
 }
 
 body {
     background-color: #121212;
     color: #eee;
-    line-height: 1.5;
+    line-height: 1.3;
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.8rem;
 }
 
 .wrapper {
@@ -64,7 +64,7 @@ body {
 /* ===== Movie Cards ===== */
 #results {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .card {
@@ -89,6 +89,8 @@ body {
     margin-bottom: 1rem;
 }
 
+
+
 .card h4 {
     margin-bottom: 0.5rem;
     text-align: center;
@@ -103,8 +105,12 @@ body {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.1rem;
     text-align: center;
+    background-color: hsl(0, 0%, 25%);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .links a {
@@ -114,10 +120,10 @@ body {
 }
 
 .links a:hover {
-    color: #ff5722;
+    color: hsl(14, 100%, 70%);
 }
 
 .links span {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
     font-weight: 500;
 }
