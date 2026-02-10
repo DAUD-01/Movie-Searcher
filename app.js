@@ -28,27 +28,38 @@ searchBtn.addEventListener("click", async () => {
   }
 });
 
-// ENTER KEY SUPPORT ✅
+// 'Enter Key' Search
+
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     searchBtn.click();
   }
 });
 
-function renderMovie(movie) {
-    const trailer = encodeURIComponent(
-        `${movie.Title} ${movie.Year} official trailer`
-    );
+// Render Movies
 
-    const trailerURL = `https://www.youtube.com/results?search_query=${trailer}`
-    
+function renderMovie(movie) {
+  // Get Rotten Tomatoes rating if it exists
+  const rtRatingObj = movie.Ratings.find(r => r.Source === "Rotten Tomatoes");
+  const rtRating = rtRatingObj ? rtRatingObj.Value : "N/A";
+
   results.innerHTML = `
     <div class="card">
       <img src="${movie.Poster}" alt="${movie.Title}">
       <h4>${movie.Title} (${movie.Year})</h4>
       <p>${movie.Plot}</p>
       <div class="links">
-        <span>IMDb: ${movie.imdbRating}</span>
+        <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank">
+          IMDb: ${movie.imdbRating}
+        </a>
+        <br>
+        <a href="https://www.rottentomatoes.com/search?search=${encodeURIComponent(movie.Title)}" target="_blank">
+          Rotten Tomatoes: ${rtRating}
+        </a>
+        <br>
+        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(movie.Title + ' trailer')}" target="_blank">
+          Watch Trailer
+        </a>
       </div>
     </div>
   `;

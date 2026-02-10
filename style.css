@@ -1,67 +1,123 @@
-*{
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Playwrite NZ Basic', sans-serif;
 }
+
 body {
-  font-family: 'Playwrite NZ Basic';
-}
-
-header{
-    background-color: grey;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
-.main-nav{
+    background-color: #121212;
+    color: #eee;
+    line-height: 1.5;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    justify-content: center;
+    padding: 2rem;
 }
-.sub-nav{
+
+.wrapper {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ===== Search Section ===== */
+.search-section {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.search-section h3 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.search {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    background-color: hsl(0, 0%, 40%);
-}
-.main-heading{
-    font-weight: 400;
-    font-size: 2rem;
-}
-.logo img src{
-    height: 100px;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.search-section h3{
-    font-weight: 400;
-    margin-left: 20px;
-}
-
-.search-section input{
-    padding: 10px 40px;
-    margin: 20px;
-    outline: navy;
-    border: 1px solid navy;
-    border-radius: 10px;
-}
-
-.search-section button{
-    padding: 10px 30px;
-    margin-left: -20px;
-    border-radius: 10px;
+.search input {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
     border: none;
-    background-color: hsl(240, 100%, 35%);
+    outline: none;
+}
+
+.search button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    background-color: #ff3d00;
+    border: none;
+    border-radius: 8px;
     color: white;
-    font-weight: 200;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.card{
-    background-color: aliceblue;
-    max-width: 75%;
+.search button:hover {
+    background-color: #ff5722;
+}
+
+/* ===== Movie Cards ===== */
+#results {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card h4 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.card p {
+    font-size: 0.95rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: #ff3d00;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #ff5722;
+}
+
+.links span {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
